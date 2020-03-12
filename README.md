@@ -1,4 +1,5 @@
 # PlatformUtil
+[![Nuget](https://img.shields.io/nuget/v/PlatformUtil)](https://www.nuget.org/packages/PlatformUtil/)
 
 An NET Standard 2.0 library that provides the ability to detect current platform and runtime anywhere.
 
