@@ -1,6 +1,6 @@
 # PlatformUtil
 
-An netstandard2.0 library that provides the ability to detect current platform and runtime anywhere.
+An NET Standard 2.0 library that provides the ability to detect current platform and runtime anywhere.
 
 Sometimes you just want to add platform-specific code in an netstandard library. This is why this library comes out.
 
@@ -16,3 +16,7 @@ Current detectable platforms:
 # Installation
 
 `dotnet add package PlatformUtil`
+
+# Credits
+
+- https://github.com/tlgkccampbell/ultraviolet
