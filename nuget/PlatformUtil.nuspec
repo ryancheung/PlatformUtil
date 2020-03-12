@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>PlatformUtil</id>
+    <version>0.0.0.0</version>
+    <title>PlatformUtil</title>
+    <authors>ryancheung</authors>
+    <owners>ryancheung</owners>
+    <license type="file">LICENSE.txt</license>
+    <projectUrl>https://github.com/ryancheung/PlatformUtil</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An netstandard2.0 library that provides the ability to detect current platform and runtime anywhere.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2020 ryancheung</copyright>
+    <tags>netstandard2.0</tags>
+
+    <dependencies>
+      <group targetFramework="netstandard2.0">
+      </group>
+    </dependencies>
+  </metadata>
+
+  <files>
+    <file src="..\PlatformUtil\bin\Release\netstandard2.0\PlatformUtil.dll" target="lib/netstandard2.0" />
+    <file src="..\LICENSE.txt" />
+  </files>
+</package>
