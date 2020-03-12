@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace PlatformUtl
+namespace PlatformUtil
 {
     public static class Native
     {

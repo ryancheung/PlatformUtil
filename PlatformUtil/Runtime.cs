@@ -1,4 +1,4 @@
-﻿namespace PlatformUtl
+﻿namespace PlatformUtil
 {
     /// <summary>
     /// Represents the .NET runtime implementations.

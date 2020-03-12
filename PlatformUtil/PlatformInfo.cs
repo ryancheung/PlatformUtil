@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace PlatformUtl
+namespace PlatformUtil
 {
     /// <summary>
     /// Contains information relating to the current platform.
@@ -33,9 +33,9 @@ namespace PlatformUtl
         /// </summary>
         /// <param name="platform">The platform to evaluate.</param>
         /// <returns><see langword="true"/> if the specified platform supports runtime code generation; otherwise, <see langword="false"/>.</returns>
-        public static Boolean IsRuntimeCodeGenerationSupported(PlatformType platform)
+        public static Boolean IsRuntimeCodeGenerationSupported(Platform platform)
         {
-            if (platform == PlatformType.iOS)
+            if (platform == Platform.iOS)
                 return false;
 
             return true;
@@ -49,7 +49,7 @@ namespace PlatformUtl
         /// <summary>
         /// Gets an <see cref="Platform"/> that is currently executing this application.
         /// </summary>
-        public static PlatformType CurrentPlatform { get; }
+        public static Platform CurrentPlatform { get; }
 
         /// <summary>
         /// Gets the string which contains the machine hardware name for the current platform.
@@ -78,7 +78,7 @@ namespace PlatformUtl
         /// <summary>
         /// Attempts to detect the current platform.
         /// </summary>
-        private static PlatformType DetectCurrentPlatform(out String machineHardwareName)
+        private static Platform DetectCurrentPlatform(out String machineHardwareName)
         {
             machineHardwareName = Environment.OSVersion.Platform.ToString();
 
@@ -88,7 +88,7 @@ namespace PlatformUtl
                 case PlatformID.Win32S:
                 case PlatformID.Win32Windows:
                 case PlatformID.WinCE:
-                    return PlatformType.Windows;
+                    return Platform.Windows;
                 case PlatformID.Unix:
                     {
                         var buf = IntPtr.Zero;
@@ -102,22 +102,22 @@ namespace PlatformUtl
                                 {
                                     if (Type.GetType("UIKit.UIApplicationDelegate, Xamarin.iOS") != null)
                                     {
-                                        return PlatformType.iOS;
+                                        return Platform.iOS;
                                     }
                                     else
                                     {
-                                        return PlatformType.macOS;
+                                        return Platform.macOS;
                                     }
                                 }
                                 else
                                 {
                                     if (Type.GetType("Android.App.Activity, Mono.Android") != null)
                                     {
-                                        return PlatformType.Android;
+                                        return Platform.Android;
                                     }
                                     else
                                     {
-                                        return PlatformType.Linux;
+                                        return Platform.Linux;
                                     }
                                 }
                             }

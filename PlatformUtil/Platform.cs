@@ -1,10 +1,10 @@
 ﻿
-namespace PlatformUtl
+namespace PlatformUtil
 {
     /// <summary>
     /// Represents the platforms detected.
     /// </summary>
-    public enum PlatformType
+    public enum Platform
     {
         /// <summary>
         /// Dekstop Windows.
