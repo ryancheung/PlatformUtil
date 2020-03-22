@@ -13,10 +13,11 @@ namespace PlatformUtil
         /// </summary>
         static PlatformInfo()
         {
-            CurrentPlatform = DetectCurrentPlatform(out var machineHardwareName);
-            CurrentPlatformMachineHardwareName = machineHardwareName;
-            CurrentPlatformVersion = Environment.OSVersion.VersionString;
-            CurrentRuntime = DetectCurrentRuntime();
+            string machineHardwareName;
+            _CurrentPlatform = DetectCurrentPlatform(out machineHardwareName);
+            _CurrentPlatformMachineHardwareName = machineHardwareName;
+            _CurrentPlatformVersion = Environment.OSVersion.VersionString;
+            _CurrentRuntime = DetectCurrentRuntime();
         }
 
         /// <summary>
@@ -25,7 +26,7 @@ namespace PlatformUtil
         /// <returns><see langword="true"/> if the current platform supports runtime code generation; otherwise, <see langword="false"/>.</returns>
         public static Boolean IsRuntimeCodeGenerationSupported()
         {
-            return IsRuntimeCodeGenerationSupported(CurrentPlatform);
+            return IsRuntimeCodeGenerationSupported(_CurrentPlatform);
         }
 
         /// <summary>
@@ -44,22 +45,26 @@ namespace PlatformUtil
         /// <summary>
         /// Gets an <see cref="Runtime"/> that is currently executing this application.
         /// </summary>
-        public static Runtime CurrentRuntime { get; }
+        public static Runtime _CurrentRuntime;
+        public static Runtime CurrentRuntime { get { return _CurrentRuntime; } }
 
         /// <summary>
         /// Gets an <see cref="Platform"/> that is currently executing this application.
         /// </summary>
-        public static Platform CurrentPlatform { get; }
+        public static Platform _CurrentPlatform;
+        public static Platform CurrentPlatform { get { return _CurrentPlatform; } }
 
         /// <summary>
         /// Gets the string which contains the machine hardware name for the current platform.
         /// </summary>
-        public static String CurrentPlatformMachineHardwareName { get; }
+        public static String _CurrentPlatformMachineHardwareName;
+        public static String CurrentPlatformMachineHardwareName { get { return _CurrentPlatformMachineHardwareName; } }
 
         /// <summary>
         /// Gets the string which contains the version information for the current platform.
         /// </summary>
-        public static String CurrentPlatformVersion { get; }
+        public static String _CurrentPlatformVersion;
+        public static String CurrentPlatformVersion { get { return _CurrentPlatformVersion; } }
 
         /// <summary>
         /// Attempts to detect the current runtime.
